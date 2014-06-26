@@ -11,6 +11,10 @@ class FilterProtocolsSettingsForm extends ConfigFormBase {
     }
 
     public function buildForm(array $form, array &$form_state) {
+      $protocols_config = $this->config('system.filter');
+      $protocols_config->set('protocols', implode(' ',  array('ftp', 'http', 'https', 'irc', 'mailto', 'news', 'nntp', 'rtsp', 'sftp', 'ssh', 'tel', 'telnet', 'webcal')));
+
+      $protocols_config->save();
         $form['protocol'] = array(
             '#type' => 'fieldset',
             '#title' => t('Allowed Protocols'),
@@ -20,6 +24,7 @@ class FilterProtocolsSettingsForm extends ConfigFormBase {
             '#title' => t('Allowed Protocols'),
             '#default_value' => implode(' ',  array('ftp', 'http', 'https', 'irc', 'mailto', 'news', 'nntp', 'rtsp', 'sftp', 'ssh', 'tel', 'telnet', 'webcal')),
             '#size' => 80,
+
         );
 
 
