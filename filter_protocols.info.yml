@@ -1,0 +1,7 @@
+name : Filter allowed protocols
+type: module
+description : "Creates an interface for the allowed protocols used in filter_xss_bad_protocol()."
+package: Filter allowed protocols
+version: 8.0
+core: 8.x
+configure: action.admin

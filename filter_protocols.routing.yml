@@ -1,0 +1,6 @@
+flood_control.settings:
+  path: 'admin/config/content/formats/protocols'
+  defaults:
+    _form: '\Drupal\filter_protocols\Form\FilterProtocolsSettingsForm'
+  requirements:
+    _permission: 'administer site configuration'
