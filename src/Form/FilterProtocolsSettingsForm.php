@@ -27,7 +27,10 @@ class FilterProtocolsSettingsForm extends ConfigFormBase {
     }
 
     public function submitForm(array &$form, array &$form_state) {
-       $protocols_config->set('protocols', $form_state['protocol']['protocols']);
+      $protocols_config = $this->config('system.filter');
+      $protocols_config->set('protocols', $form_state['values']['protocols']);
+
+      $protocols_config->save();
         parent::submitForm($form, $form_state);
     }
 
