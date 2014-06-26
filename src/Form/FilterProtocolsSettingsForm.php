@@ -11,7 +11,17 @@ class FilterProtocolsSettingsForm extends ConfigFormBase {
     }
 
     public function buildForm(array $form, array &$form_state) {
-        
+        $form['protocol'] = array(
+            '#type' => 'fieldset',
+            '#title' => t('Allowed Protocols'),
+        );
+        $form['protocol']['protocols'] = array(
+            '#type' => 'textfield',
+            '#title' => t('Allowed Protocols'),
+            '#default_value' => implode(' ', $allowed_protocols = \Drupal::config('system.filter')->get('protocols'), array('ftp', 'http', 'https', 'irc', 'mailto', 'news', 'nntp', 'rtsp', 'sftp', 'ssh', 'tel', 'telnet', 'webcal'))),
+            '#size' => 80,
+        );
+
 
         return parent::buildForm($form, $form_state);
     }
