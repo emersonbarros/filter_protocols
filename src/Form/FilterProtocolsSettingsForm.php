@@ -18,7 +18,7 @@ class FilterProtocolsSettingsForm extends ConfigFormBase {
         $form['protocol']['protocols'] = array(
             '#type' => 'textfield',
             '#title' => t('Allowed Protocols'),
-            '#default_value' => '1',
+            '#default_value' => implode(' ',  array('ftp', 'http', 'https', 'irc', 'mailto', 'news', 'nntp', 'rtsp', 'sftp', 'ssh', 'tel', 'telnet', 'webcal')),
             '#size' => 80,
         );
 
