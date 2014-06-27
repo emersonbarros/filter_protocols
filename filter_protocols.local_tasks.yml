@@ -1,0 +1,4 @@
+filter_protocols.settings: # The second plugin ID
+  title: 'Filter allowed protocols'
+  route_name: filter_protocols.settings
+  base_route: filter.admin_overview
